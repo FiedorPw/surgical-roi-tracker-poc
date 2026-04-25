@@ -155,7 +155,6 @@ poc/
   README.md                    # ten plik
   requirements.txt             # zaleznosci pip
   demo.gif                     # animacja demo (GIF, ~1MB)
-  demo.mp4                     # przyciety fragment wideo demo (9s)
   models_comparison.md         # pelna analiza porownawcza z benchmarku
   benchmark.py                 # framework benchmarkowy (7 scenariuszy syntetycznych)
   models/

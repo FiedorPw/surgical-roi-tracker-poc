@@ -1,0 +1,9 @@
+[project]
+name = "surgical-roi-stabilizer-poc"
+version = "0.1.0"
+description = "POC: ROI-locked digital crop for chest-mounted surgical camera"
+requires-python = ">=3.10"
+dependencies = [
+    "opencv-contrib-python>=4.11.0",
+    "numpy>=2.4.4",
+]

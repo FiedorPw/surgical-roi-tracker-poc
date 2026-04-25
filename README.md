@@ -2,7 +2,7 @@
 
 System elektronicznego pan-tilt-zoom (ePTZ): chirurg zaznacza region na obrazie z szerokokatnej kamery na klatce piersiowej, a system utrzymuje ten region wycentrowany i stabilny w oknie wyjsciowym — bez mechanicznych czesci, w czasie rzeczywistym.
 
-https://github.com/user-attachments/assets/demo.mp4
+![demo](demo.gif)
 
 ## Problem
 

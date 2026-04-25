@@ -148,38 +148,24 @@ python benchmark.py --visualize
 
 Pelne wyniki i analiza: [models_comparison.md](models_comparison.md)
 
-## Dodatkowe PoC-e
-
-Poza top 3 sa jeszcze dwa podejscia:
-
-| Plik | Co robi |
-|---|---|
-| `stabilize_kcf.py` | KCF (ultra-szybki filtr korelacyjny) + optical flow fallback. ~430 FPS, ale fatalne na szybkim ruchu. |
-| `stabilize_ensemble.py` | ViT + CSRT rownoczesnie z votingiem. Dobry kiedy nie ma okluzji, ale obaj przeskakuja na twarz naraz. |
-| `stabilize_tracker.py` | Oryginalny baseline ViT (bez zabezpieczen). |
-| `stabilize_optflow.py` | Oryginalny baseline optical flow (bez deep trackera). |
-
 ## Struktura
 
 ```
 poc/
   README.md                    # ten plik
   requirements.txt             # zaleznosci pip
+  demo.gif                     # animacja demo (GIF, ~1MB)
   demo.mp4                     # przyciety fragment wideo demo (9s)
   models_comparison.md         # pelna analiza porownawcza z benchmarku
   benchmark.py                 # framework benchmarkowy (7 scenariuszy syntetycznych)
   models/
     vitTracker.onnx            # model ViT (700KB)
-    dasiamrpn_model.onnx       # model DaSiamRPN (87MB)
-    dasiamrpn_kernel_cls1.onnx # kernel cls DaSiamRPN (23MB)
-    dasiamrpn_kernel_r1.onnx   # kernel reg DaSiamRPN (46MB)
+    dasiamrpn_model.onnx       # model DaSiamRPN (87MB) — gitignored, pobierz recznie
+    dasiamrpn_kernel_cls1.onnx # kernel cls DaSiamRPN (23MB) — gitignored
+    dasiamrpn_kernel_r1.onnx   # kernel reg DaSiamRPN (46MB) — gitignored
   stabilize_vit_improved.py    # PoC 1: ViT Improved
   stabilize_dasiamrpn.py       # PoC 2: DaSiamRPN
   stabilize_hybrid.py          # PoC 3: Hybrid CSRT + OptFlow
-  stabilize_kcf.py             # PoC 4: KCF + OptFlow
-  stabilize_ensemble.py        # PoC 5: Ensemble ViT+CSRT
-  stabilize_tracker.py         # Baseline: oryginalny ViT
-  stabilize_optflow.py         # Baseline: oryginalny optical flow
 ```
 
 ## Znany problem: przeskok na twarz
